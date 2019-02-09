@@ -6,6 +6,8 @@ long temp[] = {0,0,0,0,0,0,0,0,0,0};
 int tempF;
 int yDist;
 int xpos = 0;
+Table table;
+
 void setup()
 {
  //setup fonts for use throughout the application
@@ -14,6 +16,10 @@ void setup()
 //init serial communication port
  commPort = new Serial(this, "COM7", 9600);
 
+ table = new Table();
+ table.addColumn("value");
+ table.addColumn("label");
+ 
 }
 
 int readByte(){

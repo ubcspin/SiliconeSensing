@@ -30,7 +30,7 @@
 int sensorPin = A0;    // select the input pin for the potentiometer
 int ledPin = 13;      // select the pin for the LED
 long sensorValue[10] = {0,0,0,0,0,0,0,0,0,0};  // variable to store the value coming from the sensor
-int freqs[10] = {5, 10, 15, 20, 25, 30, 35, 40, 45, 250};
+int freqs[10] = {0, 1, 3, 7, 15, 31, 63, 127, 255, 0};
 void setup() {
   // declare the ledPin as an OUTPUT:
   pinMode(ledPin, OUTPUT);
@@ -44,19 +44,21 @@ void loop() {
    
   // read the value from the sensor:
 
- // pinMode(3, OUTPUT);
+
  // pinMode(11, OUTPUT);
   TCCR2A = _BV(COM2A0) | _BV(COM2B1) | _BV(WGM21) | _BV(WGM20);
-  TCCR2B = _BV(WGM22) | _BV(CS22);
+  TCCR2B = _BV(WGM22) | _BV(CS20);
   OCR2B = 50;
-
+  digitalWrite(5, HIGH);
   for(int i = 0; i < 10; i++){
-
+    
     sensorValue[i] = 0;
   }
   for(int i = 0; i < 10; i++){
     OCR2A = freqs[i];
     delay(1);
+    if(i == 5)
+  digitalWrite(5, LOW);
    for(int j =0; j < 100; j++){
     sensorValue[i] += analogRead(sensorPin);
   }
@@ -70,6 +72,16 @@ void loop() {
   Serial.write(lowByte(222));
   Serial.write(highByte(222));
   
+  Serial.write(lowByte(222));
+  Serial.write(highByte(222));
+
+  
+  Serial.write(lowByte(222));
+  Serial.write(highByte(222));
+
+  
+  Serial.write(lowByte(222));
+  Serial.write(highByte(222));
   // turn the ledPin on
  // digitalWrite(ledPin, HIGH);
   // stop the program for <sensorValue> milliseconds:
