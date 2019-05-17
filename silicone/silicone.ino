@@ -30,7 +30,7 @@
 int sensorPin = A0;    // select the input pin for the potentiometer
 int ledPin = 13;      // select the pin for the LED
 long sensorValue[10] = {0,0,0,0,0,0,0,0,0,0};  // variable to store the value coming from the sensor
-int freqs[10] = {0, 1, 3, 7, 15, 31, 63, 127, 255, 0};
+int freqs[10] = {0, 2, 30, 70, 150, 310, 630, 1270, 1900, 0};
 void setup() {
   // declare the ledPin as an OUTPUT:
   pinMode(ledPin, OUTPUT);
