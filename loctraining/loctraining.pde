@@ -17,16 +17,46 @@ void setup()
  commPort = new Serial(this, "COM4", 9600);
 
  table = new Table();
- table.addColumn("tl");
- table.addColumn("bl");
- table.addColumn("tl2");
- table.addColumn("tr");
- table.addColumn("tr2");
- table.addColumn("br");
- table.addColumn("bl2");
- table.addColumn("br2");
- table.addColumn("x");
- table.addColumn("y");
+ table.addColumn("rt-rb");
+ table.addColumn("rb-br");
+ table.addColumn("br-bl");
+ table.addColumn("bl-lb");
+ table.addColumn("lb-lt");
+ table.addColumn("rb-br2");
+ table.addColumn("br-bl2");
+ table.addColumn("bl-lb2");
+ table.addColumn("lb-lt2");
+ table.addColumn("lt-tl");
+ table.addColumn("br-bl3");
+ table.addColumn("bl-lb3");
+ table.addColumn("lb-lt3");
+ table.addColumn("lt-tl2");
+ table.addColumn("tl-tr");
+ table.addColumn("bl-lb4");
+ table.addColumn("lb-lt4");
+ table.addColumn("lt-tl3");
+ table.addColumn("tl-tr2");
+ table.addColumn("tr-rt");
+ table.addColumn("lb-lt5");
+ table.addColumn("lt-tl4");
+ table.addColumn("tl-tr3");
+ table.addColumn("tr-tr2");
+ table.addColumn("rt-rb2");
+ table.addColumn("lt-lt5");
+ table.addColumn("tl-tr4");
+ table.addColumn("tr-tr3");
+ table.addColumn("rt-rb3");
+ table.addColumn("rb-br3");
+ table.addColumn("tl-tr5");
+ table.addColumn("tr-rt4");
+ table.addColumn("rt-rb4");
+ table.addColumn("rb-br4");
+ table.addColumn("br-bl4");
+ table.addColumn("tr-rt5");
+ table.addColumn("rt-rb6");
+ table.addColumn("rb-br5");
+ table.addColumn("br-bl5");
+ table.addColumn("bl-lb5");
  
 }
 

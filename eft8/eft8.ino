@@ -145,4 +145,6 @@ void loop() {
    
    pinMode(28, INPUT); //turn off left top
    pinMode(41, INPUT); //turn off top left
+
+   Serial.println("*********");
 }
