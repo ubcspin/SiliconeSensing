@@ -2,6 +2,8 @@
 import processing.serial.*;
 //init variables
 Serial commPort;
+int xpos = 0;
+int temp = 800;
 
 void setup()
 {
@@ -9,7 +11,7 @@ void setup()
 //set the size of the window
  size(900,900);
 //init serial communication port
- commPort = new Serial(this, "COM4", 9600);
+ commPort = new Serial(this, "COM7", 9600);
   textSize(20);
 }
 
@@ -34,12 +36,16 @@ int readByte(){
 
 void draw()
 {
+  xpos++;
   fill(0);
-  background(255);
-  println(readByte());
-  if(readByte() > 100){
-    text("TOUCH", 300, 300);
-  }else{
-    text("NO TOUCH", 300, 300);
+  //background(255);
+  temp = readByte();
+  println(temp);
+
+ rect (xpos, 200+temp,2,2);
+ 
+  if(xpos >= 800){
+   xpos = 0;
+   background(255);
   }
 }

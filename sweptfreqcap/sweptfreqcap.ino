@@ -11,9 +11,9 @@ void setup() {
 
 //  pinMode(3, OUTPUT);  
   pinMode(11, OUTPUT);
-  pinMode(7, OUTPUT);
-  pinMode(4, INPUT);
-  pinMode(2, INPUT);
+//  pinMode(7, OUTPUT);
+//  pinMode(4, INPUT);
+//  pinMode(2, INPUT);
 //  pinMode(5, OUTPUT);
   Serial.begin(9600);  
 
@@ -23,14 +23,14 @@ void loop() {
      Serial.write(lowByte(222));
   Serial.write(highByte(222));
   pinMode(11, OUTPUT);
-  pinMode(7, OUTPUT);
+//  pinMode(7, OUTPUT);
 
   for(int i = 0; i < 7; i ++){
     TCCR2A = _BV(COM2A0) | _BV(COM2B1) | _BV(WGM21) | _BV(WGM20);
     TCCR2B = _BV(WGM22) | _BV(CS20);
     OCR2B = 50;    
     OCR2A = freqs[i];
-    digitalWrite(7, LOW);
+//    digitalWrite(7, LOW);
   
   //  digitalWrite(5, HIGH);
   //  for(int i = 0; i < 10; i++){

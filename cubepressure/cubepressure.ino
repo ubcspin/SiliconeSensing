@@ -16,6 +16,6 @@ void loop() {
 
   Serial.write(lowByte(val));
   Serial.write(highByte(val));
-  delay(20);
+  delay(20 );
   
 }
