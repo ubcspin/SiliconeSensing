@@ -1,4 +1,4 @@
-int sending[] = {2, 3, 4, 5, 6, 7};
+int sending[] = {2, 3, 4, 5, 6, 7, 2};
 int receiving[] = {A0, A1, A2, A3, A4, A5};
 
 int buff[] = {0, 0, 0, 0, 0, 0, 222};
@@ -37,8 +37,10 @@ void loop() {
   
     pinMode(receiving[i], INPUT);
     pinMode(sending[i], OUTPUT);
+    pinMode(sending[i+1], OUTPUT);
     digitalWrite(sending[i], HIGH);
-    delay(10);
+    digitalWrite(sending[i+1], LOW);
+    delay(30);
     int val = 0;
     
     for(int j =0; j < 1; j++){

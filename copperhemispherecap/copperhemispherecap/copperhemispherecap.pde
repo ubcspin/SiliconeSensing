@@ -50,9 +50,10 @@ void draw()
   
   for (int i = 0; i < 6; i++) {
     temp[i] = readByte();
-    println(temp[i]);
-    fill(map(temp[i], 0, 1023, 0, 255)*2);
+    print(temp[i] + " ");
+    fill(map(temp[i], 0, 1023, 0, 255));
     arc(width/2, height/2, 500, 500, radians(60)*i, radians(60)*(i+1));
   }
+  println("");
 
 }
