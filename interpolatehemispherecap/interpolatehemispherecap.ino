@@ -52,13 +52,10 @@ void loop() {
     buff[i] = val;
     turnAllOff();
     
-//    delay(2);
-//    for(int j = 0; j < 6; j++){
-//    pinMode(receiving[j], INPUT);
-//    }
   }
 
 for(int i = 0; i < 7; i++){
+
   Serial.write(lowByte(buff[i]));
   Serial.write(highByte(buff[i]));
 }

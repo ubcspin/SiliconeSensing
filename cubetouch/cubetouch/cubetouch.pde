@@ -9,7 +9,7 @@ void setup()
 //set the size of the window
  size(900,900);
 //init serial communication port
- commPort = new Serial(this, "COM4", 9600);
+ commPort = new Serial(this, "COM7", 9600);
 fill(0);
 textSize(20);
  
