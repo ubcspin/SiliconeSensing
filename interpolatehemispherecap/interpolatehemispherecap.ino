@@ -40,7 +40,7 @@ void loop() {
     pinMode(sending[i+1], OUTPUT);
     digitalWrite(sending[i], HIGH);
     digitalWrite(sending[i+1], LOW);
-    delay(50);
+    delay(30);
     int val = 0;
     
     for(int j =0; j < 1; j++){

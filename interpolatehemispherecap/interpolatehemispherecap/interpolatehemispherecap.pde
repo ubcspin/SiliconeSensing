@@ -14,6 +14,7 @@ void setup()
  size(800,800);
 //init serial communication port
  commPort = new Serial(this, "COM7", 9600);
+ noStroke();
 
 }
 
@@ -39,35 +40,34 @@ float interpolate(int before, int after, float pos){
   pos = pos/10;
   float x =0;
   x = pos*after+(1-pos)*before;
-  return map(x, 0, 1023, 0, 255);
+  return map(x*2, 0, 1023, 0, 255);
 }
 void draw()
 {
-  background(255);
+  //background(255);
   do{
     tempF = readByte();
       //println(tempF);
   }while(tempF != 222);
   
-  //for(int i = 0; i < 6; i++){
-  // temp[i] = readByte(); 
-  //}
+  //temp[0] = readByte()/5;
   
-  for (int i = 0; i < 6; i++) {
-    temp[i] = readByte();
-    //print(temp[i] + " ");
-    //fill(map(temp[i], 0, 1023, 0, 255));
-    //arc(width/2, height/2, 500, 500, radians(60)*i, radians(60)*(i+1));
+  //println(temp[0]);
+  //background(temp[0]);
+  
+  for(int i = 0; i < 6; i++){
+   temp[i] = readByte(); 
   }
+  
   
  for (int i = 0; i < 6; i++) {
    // temp[i] = readByte();
-    //print(temp[i] + " ");
+    print(temp[i] + " ");
     int j = i *10;
-    println(i);
+    //println("");
     if(i == 5){
       
-      fill(map(temp[i], 0, 1023, 0, 255));
+      fill(map(temp[i]*2, 0, 1023, 0, 255));
       arc(width/2, height/2, 500, 500, radians(6)*j, radians(6)*(j+1));
       fill(interpolate(temp[i], temp[0], 1));
       arc(width/2, height/2, 500, 500, radians(6)*(j+1), radians(6)*(j+2));
@@ -88,7 +88,7 @@ void draw()
       fill(interpolate(temp[i], temp[0], 9));
       arc(width/2, height/2, 500, 500, radians(6)*(j+9), radians(6)*(j+10));
     }else{
-      fill(map(temp[i], 0, 1023, 0, 255));
+      fill(map(temp[i]*2, 0, 1023, 0, 255));
       arc(width/2, height/2, 500, 500, radians(6)*j, radians(6)*(j+1));
       fill(interpolate(temp[i], temp[i+1], 1));
       arc(width/2, height/2, 500, 500, radians(6)*(j+1), radians(6)*(j+2));
@@ -112,5 +112,7 @@ void draw()
     
     }
   }
+      println("");
+
 
 }
